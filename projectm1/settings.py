@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'projectm1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -122,8 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Developer added
-STATICFILES_DIRS =[
-os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
 ]
 
 # Default primary key field type
@@ -132,9 +133,16 @@ os.path.join(BASE_DIR, "static")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#mail system settings
+# mail system settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'therespawner69@gmail.com'
 EMAIL_HOST_PASSWORD = 'wzokrdhjtpvmgfuc'
-EMAIL_USE_TLS = True 
+EMAIL_USE_TLS = True
+
+
+# for render sql
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://production_database_b1ns_user:dpoUJIntN40WkY5HUiqW66h4k4yKv05m@dpg-cfq2vt2rrk08lt3d1bn0-a.ohio-postgres.render.com/production_database_b1ns')
+}
