@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
     # ...
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -142,8 +142,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # mail system settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'therespawner69@gmail.com'
-EMAIL_HOST_PASSWORD = 'wzokrdhjtpvmgfuc'
+EMAIL_HOST_USER = 'hakukale063@gmail.com'
+EMAIL_HOST_PASSWORD = 'fjvyxbbekgbwxvbn'
 EMAIL_USE_TLS = True
 
 
