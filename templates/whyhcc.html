@@ -1,0 +1,191 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      h1 {
+        font-weight: 600;
+        color: black;
+      }
+      h1:hover {
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .gridd_container {
+        position: relative;
+        /*text-align: center;
+        font-size: 1.3rem;*/
+
+        grid-gap: 0.2rem;
+        color: black;
+        display: grid;
+        grid-template-columns: 0.9fr 2fr;
+        grid-template-rows: 1.5fr;
+        grid-template-areas: "sidebar main";
+      }
+
+      .mainn {
+        text-align: justify;
+        padding: 20px;
+        background: #fff;
+        grid-area: main;
+      }
+      .sidebar {
+        background: #2980b9;
+        grid-area: sidebar;
+      }
+      /*responsive grid for phone starts*/
+
+      @media only screen and (max-width: 768px) {
+        .gridd_container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.3fr 2fr;
+          grid-template-areas:
+            "sidebar"
+            "main";
+        }
+        .mainn {
+          background: #fff;
+          grid-area: main;
+        }
+        .sidebar {
+          padding: 5px;
+          margin: 0px 7px 0px 7px;
+          background: #fff;
+          grid-area: sidebar;
+        }
+      }
+      /*responsive grid for phone ends*/
+      /*responsive grid for PC starts*/
+      @media all and (min-width: 800px) {
+        .mainn {
+          background: #fff;
+          grid-area: main;
+          margin-right: 12rem;
+        }
+        .sidebar {
+          background: #fff;
+          margin-left: 12rem;
+          margin-top: 25px;
+          grid-area: sidebar;
+        }
+      }
+      /*responsive grid for PC ends*/
+
+      /*Image management CSS starts*/
+      .main_img_div {
+        width: 100%;
+      }
+      .main_img {
+        object-fit: cover;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      /*Image management CSS ends*/
+
+      /*After photo CSS starts*/
+      .sub_titles {
+        font-weight: 700;
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .sub_titles:hover {
+        color: red;
+      }
+      /*After photo CSS ends*/
+      .main_img:hover {
+        border-radius: 20px;
+        transition-duration: 0.5s;
+        transform: scale(1.1) rotate(0deg);
+        box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+      }
+      .subheadings {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+    <div class="gridd_container">
+      <div class="sidebar" data-aos="fade-up">
+        <a href="/about_hcc" class="sidebar_a"
+          >About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS.</a
+        >
+      </div>
+      <main class="mainn" >
+        <h1>Why HCC</h1>
+        <div class="main_img_div" data-aos="fade-right">
+          <img src="{% static 'college1.jpg' %}" alt="" class="main_img" />
+        </div>
+
+        <ol>
+          <li class="subheadings" data-aos="fade-up">Human Resource</li>
+          <p class="long_paragraph" data-aos="fade-up">
+            HCC is a top employer in the education, technical, management, and
+            support fields. Many of our graduates plan to work in the education
+            sector, specifically at HCC.
+            <br />
+            Our Human Resource Management Unit, which was created to manage and
+            develop teaching and non-teaching human resources, is always on the
+            lookout for new leaders and talents to join HCC.
+          </p>
+          <li class="subheadings" data-aos="fade-up">Reasonable and competitive prices</li>
+          <p class="long_paragraph" data-aos="fade-up">
+            Our service fees are significantly lower than those charged by the
+            majority of Nepalese education firms. This is due to the fact that
+            we are an independent education firm that sets our own rates; as a
+            result, our rates are fair and competitive without sacrificing
+            quality in any way.
+          </p>
+          <li class="subheadings" data-aos="fade-up">Standing</li>
+          <p class="long_paragraph" data-aos="fade-up">
+            Since its inception, HCC has earned a stellar reputation for
+            providing first-rate services and collaborating with prestigious
+            universities and colleges all over the world. As a result, pursuing
+            an education at HCC will increase your chances of landing a better
+            job in the future.
+          </p>
+          <li class="subheadings" data-aos="fade-up">Partnership and Collaboration</li>
+          <p class="long_paragraph" data-aos="fade-up">
+            Today, HCC has formed alliances with leading organizations in the
+            fields of information technology as well as innovation, business,
+            entrepreneurship, research, and education. Every year, several
+            programs and events are organized in collaboration with HCC or
+            elsewhere for our students. These collaborations have resulted in
+            mutual benefits for HCC and partner organizations in the areas of
+            business development, innovation, and learning.
+          </p>
+          <li class="subheadings" data-aos="fade-up">Research and Development</li>
+          <p class="long_paragraph" data-aos="fade-up">
+            HCC relies heavily on research and development. We have been working
+            on several initiatives, collaborating on various research projects
+            with various leading partner organizations.
+          </p>
+        </ol>
+      </main>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {
+        duration: 1000
+        }
+      );
+    </script>
+    {% endblock %}
+  </body>
+</html>
+
+<!-- About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS. -->

@@ -1,0 +1,170 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      h1{
+        font-weight:600;
+        color: black;
+      }
+      h1:hover{
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .gridd_container {
+        position: relative;
+        /*text-align: center;
+        font-size: 1.3rem;*/
+
+        grid-gap: 0.2rem;
+        color: black;
+        display: grid;
+        grid-template-columns: 0.9fr 2fr;
+        grid-template-rows: 1.5fr;
+        grid-template-areas: "sidebar main";
+      }
+
+      .mainn {
+        text-align: justify;
+        padding: 20px;
+        background: #fff;
+        grid-area: main;
+      }
+      .sidebar {
+        background: #2980b9;
+        grid-area: sidebar;
+      }
+      /*responsive grid for phone starts*/
+
+      @media only screen and (max-width: 768px) {
+        .gridd_container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.3fr 2fr;
+          grid-template-areas:
+            "sidebar"
+            "main";
+        }
+        .mainn {
+          background: #fff;
+          grid-area: main;
+        }
+        .sidebar {
+          padding: 5px;
+          margin: 0px 7px 0px 7px;
+          background: #fff;
+          grid-area: sidebar;
+        }
+        .points{
+          font-size: 14px;
+        }
+      }
+      /*responsive grid for phone ends*/
+      /*responsive grid for PC starts*/
+      @media all and (min-width: 800px) {
+        .mainn {
+          background: #fff;
+          grid-area: main;
+          margin-right: 12rem;
+        }
+        .sidebar {
+          background: #fff;
+          margin-left: 12rem;
+          margin-top: 25px;
+          grid-area: sidebar;
+        }
+      }
+      /*responsive grid for PC ends*/
+
+      /*Image management CSS starts*/
+      .main_img_div {
+        width: 100%;
+      }
+      .main_img {
+        object-fit: cover;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      /*Image management CSS ends*/
+
+      /*After photo CSS starts*/
+      .sub_titles{
+        font-weight: 700;
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .sub_titles:hover{
+        color: red;
+      }
+      /*After photo CSS ends*/
+      .main_img:hover{
+        border-radius: 20px;
+        transition-duration: .5s;
+        transform: scale(1.1) rotate(0deg);
+        box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+        
+      }
+      h6,h4{
+        font-weight: bold;
+      }
+      ul{
+        list-style-type: square;
+      }
+
+    </style>
+    <div class="gridd_container">
+      <div class="sidebar" data-aos="fade-up">
+        <a href="/about_hcc" class="sidebar_a"
+          >About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS.</a
+        >
+      </div>
+      <main class="mainn">
+        <h1>Location</h1>
+        <div class="main_img_div" data-aos="fade-right">
+          <img src="{% static 'college1.jpg' %}" alt="" class="main_img" />
+        </div>
+        <div class="container" data-aos="fade-up">
+          <h4>Our college lies in heart of green city Hetauda.</h4>
+          <h6>Hetauda 05 Piple</h6>
+          <ul>
+            <li class="points">From buddha chowk head towards the East side. </li>
+            <li class="points">After around 4 kilometers you will be on the town named Piple .</li>
+            <li class="points">Then 100 meters more forward you can see the Baniya Nirmand Sews Pvt.Ltd (BNS).</li>
+            <li class="points">After that you will able to see big red and white building just opposite to BNS.</li>
+          </ul>
+          <div style="overflow:hidden;resize:none;max-width:100%;width:100%;height:450px;"><div id="g-mapdisplay" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Hetauda+City+College,+Hetauda,+Nepal&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="googlemaps-made" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="get-map-data">premium bootstrap themes</a><style>#g-mapdisplay img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {
+        duration: 700
+        }
+      );
+    </script>
+    {% endblock %}
+  </body>
+</html>
+
+<!-- About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS. -->

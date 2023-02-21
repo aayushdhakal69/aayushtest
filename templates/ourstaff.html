@@ -1,0 +1,263 @@
+{% extends 'base.html' %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webIQ</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+      .container {
+        color: black;
+      }
+
+      .heading {
+        font-size: 60px;
+        color: black;
+      }
+
+      .heading:hover {
+        cursor: pointer;
+        color: hotpink;
+      }
+
+      .heading span {
+        border-radius: 10px;
+        border-bottom: 4px solid #a6ce3b;
+        font-size: 60px;
+      }
+
+      .profiles {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 80px;
+      }
+
+      .profile {
+        flex-basis: 260px;
+      }
+
+      .profile .profile-img {
+        height: 260px;
+        width: 260px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 400ms;
+      }
+
+      .profile-img {
+        filter: saturate(1);
+      }
+
+      .user-name {
+        margin-top: 30px;
+        font-size: 30px;
+      }
+
+      .profile h5 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        color: red;
+      }
+
+      .profile p {
+        font-size: 16px;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      @media only screen and (max-width: 1150px) {
+        .profiles {
+          flex-direction: column;
+        }
+
+        .profile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .profile p {
+          text-align: center;
+          margin: 20px 60px 80px 60px;
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 900px) {
+        .heading {
+          font-size: 40px;
+          color: black;
+          text-align: center;
+        }
+
+        .heading span {
+          font-size: 40px;
+        }
+
+        .profiles {
+          margin: 20px 0;
+        }
+
+        .profile p {
+          margin: 20px 10px 80px 10px;
+        }
+      }
+    </style>
+    <div class="container">
+      <h1 class="heading">Meet<span> Our Team </span></h1>
+
+      <div class="profiles" data-aos="fade-up">
+        <div class="profile">
+          <img
+            src="{% static 'lorem_co-ordinator.jpg' %}"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Naresh Nath Yogi</h3>
+          <h5>Bacelors Co-ordinator</h5>
+          <p>
+            Perfect rules and real world trainings for studends.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'sumanta.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Sumanta Silwal</h3>
+          <h5>Marketing Director</h5>
+          <p>
+            As soon as Possible you may realize that you are the future IT officer.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'dineshsir.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Dinesh phuyal</h3>
+          <h5>+2 Co-ordinator</h5>
+          <p>
+            Students and we as a team try to solve those big problems in our community or society.
+          </p>
+        </div>
+      </div>
+      <!-- PROFILES ROW 2 FOR PC STARTS -->
+      <div class="profiles" data-aos="fade-up">
+        <div class="profile">
+          <img
+            src="{% static 'priyamam.jpg' %}"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Priya Pandey</h3>
+          <h5>Accountant</h5>
+          <p>
+            Empowering and encouraging girls to pursue careers in Information Technology.
+        </div>
+        <div class="profile">
+          <img src="{% static 'md.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Falano MD</h3>
+          <h5>Managing Director</h5>
+          <p>
+            We are committed to providing equal opportunities and encouraging diversity in our college.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'tunandsir.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Kumar Keshari</h3>
+          <h5>Mathematics Professor</h5>
+          <p>
+            Mathematics give you smartness in your day to day work and works as a great tool.
+          </p>
+        </div>
+      </div>
+      <!-- PROFILES ROW 2 FOR PC ENDS -->
+      <!-- PROFILES ROW 3 FOR PC STARTS -->
+      <div class="profiles" data-aos="fade-up">
+        <div class="profile">
+          <img
+            src="{% static 'umeshsir.jpg' %}"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Umesh Pathak</h3>
+          <h5>Programming Professor</h5>
+          <p>
+            The is more than 75% contribution of softwares in technology as a whole.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'principal.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Shree Karki</h3>
+          <h5>Principal</h5>
+          <p>
+            Making decisions and working as a better leader in Hetauda City College. 
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'ranjitsir.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Ranjit Karki</h3>
+          <h5>English Professor</h5>
+          <p>
+            Fluent international language breaks language barrier all over the world.
+          </p>
+        </div>
+      </div>
+      <!-- PROFILES ROW 3 FOR PC ENDS -->
+      <!-- PROFILES ROW 4 FOR PC STARTS -->
+      <div class="profiles" data-aos="fade-up">
+        <div class="profile">
+          <img
+            src="{% static 'anjilsir.jpg' %}"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Anjil Khadka</h3>
+          <h5>Microprocessor Professor</h5>
+          <p>
+            The software containing device always includes Microprocessor.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'sumanta.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Sumanta Silwal</h3>
+          <h5>Marketing Director</h5>
+          <p>
+            As soon as Possible you may realize that you are the future IT officer.
+          </p>
+        </div>
+        <div class="profile">
+          <img src="{% static 'dineshsir.jpg' %}" class="profile-img" />
+
+          <h3 class="user-name">Dinesh phuyal</h3>
+          <h5>+2 Co-ordinator</h5>
+          <p>
+            Students and we as a team try to solve those big problems in our community or society.
+          </p>
+        </div>
+      </div>
+      <!-- PROFILES ROW 4 FOR PC ENDS -->
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {
+        duration: 900
+        }
+      );
+    </script>
+    {% endblock %}
+  </body>
+</html>

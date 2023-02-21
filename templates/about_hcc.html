@@ -1,0 +1,192 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      h1 {
+        font-weight: 600;
+        color: black;
+      }
+      h1:hover {
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .gridd_container {
+        position: relative;
+        /*text-align: center;
+        font-size: 1.3rem;*/
+
+        grid-gap: 0.2rem;
+        color: black;
+        display: grid;
+        grid-template-columns: 0.9fr 2fr;
+        grid-template-rows: 1.5fr;
+        grid-template-areas: "sidebar main";
+      }
+
+      .mainn {
+        text-align: justify;
+        padding: 20px;
+        background: #fff;
+        grid-area: main;
+      }
+      .sidebar {
+        background: #2980b9;
+        grid-area: sidebar;
+      }
+      /*responsive grid for phone starts*/
+
+      @media only screen and (max-width: 768px) {
+        .gridd_container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.3fr 2fr;
+          grid-template-areas:
+            "sidebar"
+            "main";
+        }
+        .mainn {
+          background: #fff;
+          grid-area: main;
+        }
+        .sidebar {
+          padding: 5px;
+          margin: 0px 7px 0px 7px;
+          background: #fff;
+          grid-area: sidebar;
+        }
+      }
+      /*responsive grid for phone ends*/
+      /*responsive grid for PC starts*/
+      @media all and (min-width: 800px) {
+        .mainn {
+          background: #fff;
+          grid-area: main;
+          margin-right: 12rem;
+        }
+        .sidebar {
+          background: #fff;
+          margin-left: 12rem;
+          margin-top: 25px;
+          grid-area: sidebar;
+        }
+      }
+      /*responsive grid for PC ends*/
+
+      /*Image management CSS starts*/
+      .main_img_div {
+        width: 100%;
+      }
+      .main_img {
+        object-fit: cover;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      /*Image management CSS ends*/
+
+      /*After photo CSS starts*/
+      .sub_titles {
+        font-weight: 700;
+        cursor: pointer;
+        color: #2f358f;
+      }
+      .sub_titles:hover {
+        color: red;
+      }
+      /*After photo CSS ends*/
+      .main_img:hover {
+        border-radius: 20px;
+        transition-duration: 0.5s;
+        transform: scale(1.1) rotate(0deg);
+        box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+      }
+    </style>
+    <div class="gridd_container">
+      <div class="sidebar" data-aos="fade-up">
+        <a href="/whyhcc" class="sidebar_a"
+          >About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS.</a
+        >
+      </div>
+      <main class="mainn" data-aos="fade-right">
+        <h1>About HCC</h1>
+        <div class="main_img_div">
+          <img src="{% static 'college1.jpg' %}" alt="" class="main_img" />
+        </div>
+
+        <p class="long_paragraph" data-aos="fade-up">
+          Hetauda City College is a prestigious Information Technology college
+          in Nepal. The college is in the heart of Hetauda, which is easily
+          accessible from both the Terai and the hilly regions of Nepal.
+          Currently, the college offers a variety of academic programs,
+          including 10+2 in Science, Management, and Hotel Management faculties,
+          as well as Bachelor programs in Information Technology.
+          <br />
+          <br />
+          The college began modestly, with thirty-three students in the
+          Management stream at the high school level. Today, it has over 1000
+          students studying in over fourteen academic programs each year. The
+          college now has highly experienced faculty, advanced infrastructure,
+          and technological advancements, ensuring that students receive a
+          world-class education.
+          <br />
+          <br />
+          In the Higher Secondary level, we offer courses in Science and
+          Management. A Bachelor of Computer Application is part of our
+          Undergraduate program. Hetauda City College, with the motto "Real Word
+          Problem Solving," is committed to providing quality education for the
+          advancement of society.
+        </p>
+
+        <h4 class="sub_titles">Mission</h4>
+        <p class="short_paragraph" data-aos="fade-right">
+          The purpose of HCC is to offer a platform for experience design
+          thinking so that problems can be turned into opportunities.
+        </p>
+
+        <h4 class="sub_titles">Vision</h4>
+        <p class="short_paragraph" data-aos="fade-right">
+          HCC aspires to be Nepal's top institution of higher learning for
+          immersive, innovative, and transformative education in the
+          twenty-first century.
+        </p>
+
+        <h4 class="sub_titles">Philosophy</h4>
+        <p class="short_paragraph" data-aos="fade-right">
+          Transform the Challenges into Opportunities is the Hetauda City
+          College's (HCC) guiding philosophy.
+        </p>
+
+        <h4 class="sub_titles">Values</h4>
+        <p class="short_paragraph" data-aos="fade-right">
+          Positive discipline, integrity, respect for variety, ongoing
+          improvement, and sustainability are among HCC's core values.
+        </p>
+      </main>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {
+        duration: 1000
+        }
+      );
+    </script>
+    {% endblock %}
+  </body>
+</html>
+
+<!-- About HCC Why HCCSS Faculty Office Hours Organizational Structure
+          Facts And Figures Department Of HCCSS. -->
