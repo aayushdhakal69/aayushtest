@@ -150,5 +150,5 @@ EMAIL_USE_TLS = True
 # for render sql
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://production_database_b1ns_user:dpoUJIntN40WkY5HUiqW66h4k4yKv05m@dpg-cfq2vt2rrk08lt3d1bn0-a.ohio-postgres.render.com/production_database_b1ns')
+    'default': dj_database_url.parse('postgres://production_database_51k5_user:FK5aED9HLWiRfQJ0zVclCYj8MJDmqkDk@dpg-cfqtlspmbjsgn6shjpg0-a.oregon-postgres.render.com/production_database_51k5')
 }
