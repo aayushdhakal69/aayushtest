@@ -29,13 +29,6 @@ def contact(request):
             contact = Contact(name=name,
                               email=email, phone=phone, content=content)
             contact.save()
-            # send_mail(
-            # 'Testing Mail',
-            # 'Hey thank you for taking an appointment we will inform you shortly about time!',
-            # 'therespawner69@gmail.com',
-            # [email],
-            # fail_silently=False,
-            # )
             messages.success(request, 'Successfully Received')
             return render(request, 'contact.html', {'name': name})
         else:
