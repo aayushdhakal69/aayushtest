@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 import re
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -20,25 +21,26 @@ def contact(request):
         email = request.POST['email']
         phone = request.POST['phone']
         content = request.POST['content']
-        my_list = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '\\','_','~','!']
-        g= any(char.isdigit() for char in name)
-        if name!="" and len(name)>4 and regex.search(name) == None and name!=r"\\" and len(name)<20 and g!=True:
+        my_list = ['@', '#', '$', '%', '^', '&', '*',
+                   '(', ')', '{', '}', '\\', '_', '~', '!']
+        g = any(char.isdigit() for char in name)
+        if name != "" and len(name) > 4 and regex.search(name) == None and name != r"\\" and len(name) < 20 and g != True:
             # print("Pass")regex.search(name) == None and name!=r"\\"
             contact = Contact(name=name,
-                email=email, phone=phone, content = content)
+                              email=email, phone=phone, content=content)
             contact.save()
-            send_mail(
-            'Testing Mail',
-            'Hey thank you for taking an appointment we will inform you shortly about time!',
-            'therespawner69@gmail.com',
-            [email],
-            fail_silently=False,
-            )
-            messages.success(request,'Successfully Received')
+            # send_mail(
+            # 'Testing Mail',
+            # 'Hey thank you for taking an appointment we will inform you shortly about time!',
+            # 'therespawner69@gmail.com',
+            # [email],
+            # fail_silently=False,
+            # )
+            messages.success(request, 'Successfully Received')
             return render(request, 'contact.html', {'name': name})
         else:
-            messages.info(request,'Please fill the form correctly')
-            return redirect('contact')        
+            messages.info(request, 'Please fill the form correctly')
+            return redirect('contact')
     else:
         return render(request, 'contact.html', {})
 
@@ -92,23 +94,25 @@ def plus2(request):
         phone = request.POST['phone']
         address = request.POST['address']
         grade = request.POST['grade']
-        my_list = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '\\','_','~','!']
-        g= any(char.isdigit() for char in name)
-        h= any(char in my_list for char in address)
+        my_list = ['@', '#', '$', '%', '^', '&', '*',
+                   '(', ')', '{', '}', '\\', '_', '~', '!']
+        g = any(char.isdigit() for char in name)
+        h = any(char in my_list for char in address)
         print(h)
-        if name!="" and len(name)>4 and regex.search(name) == None and name!=r"\\" and len(name)<20 and g!=True and h!=True:
+        if name != "" and len(name) > 4 and regex.search(name) == None and name != r"\\" and len(name) < 20 and g != True and h != True:
             # print("Pass")regex.search(name) == None and name!=r"\\"
             admission = Admission(name=name,
-                        email=email, phone=phone, address=address,dob=dob, grade=grade)
+                                  email=email, phone=phone, address=address, dob=dob, grade=grade)
             admission.save()
-            messages.success(request,'Successfully Received')
+            messages.success(request, 'Successfully Received')
             return render(request, 'plus2.html', {})
-        else:   
-            messages.info(request,'Please fill the form correctly')
+        else:
+            messages.info(request, 'Please fill the form correctly')
             return redirect('plus2')
-    else:   
+    else:
         return render(request, 'plus2.html', {})
-    
+
+
 def school(request):
     regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
     if request.method == 'POST':
@@ -118,21 +122,22 @@ def school(request):
         phone = request.POST['phone']
         address = request.POST['address']
         grade = request.POST['grade']
-        my_list = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '\\','_','~','!']
-        g= any(char.isdigit() for char in name)
-        h= any(char in my_list for char in address)
+        my_list = ['@', '#', '$', '%', '^', '&', '*',
+                   '(', ')', '{', '}', '\\', '_', '~', '!']
+        g = any(char.isdigit() for char in name)
+        h = any(char in my_list for char in address)
         print(h)
-        if name!="" and len(name)>4 and regex.search(name) == None and name!=r"\\" and len(name)<20 and g!=True and h!=True:
+        if name != "" and len(name) > 4 and regex.search(name) == None and name != r"\\" and len(name) < 20 and g != True and h != True:
             # print("Pass")regex.search(name) == None and name!=r"\\"
             admission = Admission(name=name,
-                        email=email, phone=phone, address=address,dob=dob, grade=grade)
+                                  email=email, phone=phone, address=address, dob=dob, grade=grade)
             admission.save()
-            messages.success(request,'Successfully Received')
+            messages.success(request, 'Successfully Received')
             return render(request, 'school.html', {})
-        else:   
-            messages.info(request,'Please fill the form correctly')
+        else:
+            messages.info(request, 'Please fill the form correctly')
             return redirect('school')
-    else:   
+    else:
         return render(request, 'school.html', {})
 
 
@@ -145,21 +150,22 @@ def bca(request):
         phone = request.POST['phone']
         address = request.POST['address']
         grade = request.POST['grade']
-        my_list = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '\\','_','~','!']
-        g= any(char.isdigit() for char in name)
-        h= any(char in my_list for char in address)
+        my_list = ['@', '#', '$', '%', '^', '&', '*',
+                   '(', ')', '{', '}', '\\', '_', '~', '!']
+        g = any(char.isdigit() for char in name)
+        h = any(char in my_list for char in address)
         print(h)
-        if name!="" and len(name)>4 and regex.search(name) == None and name!=r"\\" and len(name)<20 and g!=True and h!=True:
+        if name != "" and len(name) > 4 and regex.search(name) == None and name != r"\\" and len(name) < 20 and g != True and h != True:
             # print("Pass")regex.search(name) == None and name!=r"\\"
             admission = Admission(name=name,
-                        email=email, phone=phone, address=address,dob=dob, grade=grade)
+                                  email=email, phone=phone, address=address, dob=dob, grade=grade)
             admission.save()
-            messages.success(request,'Successfully Received')
+            messages.success(request, 'Successfully Received')
             return render(request, 'bca.html', {})
-        else:   
-            messages.info(request,'Please fill the form correctly')
+        else:
+            messages.info(request, 'Please fill the form correctly')
             return redirect('bca')
-    else:   
+    else:
         return render(request, 'bca.html', {})
 
 
@@ -172,20 +178,21 @@ def csit(request):
         phone = request.POST['phone']
         address = request.POST['address']
         grade = request.POST['grade']
-        my_list = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '\\','_','~','!']
-        g= any(char.isdigit() for char in name)
-        h= any(char in my_list for char in address)
-        if name!="" and len(name)>4 and regex.search(name) == None and name!=r"\\" and len(name)<20 and g!=True and h!=True:
+        my_list = ['@', '#', '$', '%', '^', '&', '*',
+                   '(', ')', '{', '}', '\\', '_', '~', '!']
+        g = any(char.isdigit() for char in name)
+        h = any(char in my_list for char in address)
+        if name != "" and len(name) > 4 and regex.search(name) == None and name != r"\\" and len(name) < 20 and g != True and h != True:
             # print("Pass")regex.search(name) == None and name!=r"\\"
             admission = Admission(name=name,
-                        email=email, phone=phone, address=address,dob=dob, grade=grade)
+                                  email=email, phone=phone, address=address, dob=dob, grade=grade)
             admission.save()
-            messages.success(request,'Successfully Received')
+            messages.success(request, 'Successfully Received')
             return render(request, 'csit.html', {})
-        else:   
-            messages.info(request,'Please fill the form correctly')
+        else:
+            messages.info(request, 'Please fill the form correctly')
             return redirect('csit')
-    else:   
+    else:
         return render(request, 'csit.html', {})
 
 # Syllabus functions
